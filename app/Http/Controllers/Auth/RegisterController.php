@@ -29,8 +29,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
+     /*
+    protected $redirectTo = view('relation.mypage');
+     */
     protected $redirectTo = RouteServiceProvider::HOME;
-
     /**
      * Create a new controller instance.
      *

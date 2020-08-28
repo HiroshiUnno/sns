@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    return view('layouts.layout');
+    return view('layouts.sample');
 });
-
+*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -27,5 +27,15 @@ Route::get('/loginForm', function () {
 });
 //アカウント作成画面を表示する
 Route::get('/registerForm', function() {
-    return view('auth.register');  
+    return view('auth.register');
+});
+//
+Route::get('/', 'PostController@index');
+Route::get('/post/create', 'PostController@add')->middleware('auth');
+Route::post('/post/create', 'PostController@create')->middleware('auth');
+
+
+
+Route::get('/relation/mypage', function() {
+    return view('relation.mypage');
 });

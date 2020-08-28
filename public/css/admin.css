@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
-  color: #fff;
+  background-color: #c0c0c0;
+  color: #000;
 }
 
 .navbar-laravel {
@@ -15,7 +17,7 @@ body {
 }
 
 .nav-link {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .table-dark {
@@ -39,11 +41,7 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.dropdown-menu.left {
-  left: auto;
-  right: 0;
-  /*&::before {right:auto !important; left:9px;}
-   &::after {right:auto !important; left:10px;}
-  */
+.dropdown-menu {
+  margin-right: auto;
 }
 
