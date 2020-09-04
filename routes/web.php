@@ -29,13 +29,16 @@ Route::get('/loginForm', function () {
 Route::get('/registerForm', function() {
     return view('auth.register');
 });
+
 //
 Route::get('/', 'PostController@index');
 Route::get('/post/create', 'PostController@add')->middleware('auth');
 Route::post('/post/create', 'PostController@create')->middleware('auth');
+Route::post('/mypage', 'PostController@delete')->middleware('auth');
 
+Route::get('/mypage', 'UserController@add')->middleware('auth');
+Route::get('/mypage', 'UserController@index')->middleware('auth');
+Route::get('/mypage', 'UserController@index')->middleware('auth');
 
-
-Route::get('/relation/mypage', function() {
-    return view('relation.mypage');
-});
+Route::get('/relation/friend', 'RelationController@add')->middleware('auth');
+//Route::get('/relation/friend', 'RelationController@index')->middleware('auth');

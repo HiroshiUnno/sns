@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Carbon\Carbon;
 
 
@@ -23,14 +24,16 @@ class PostController extends Controller
       $form = $request->all();
 
       unset($form['_token']);
-      /*
-      $str = str_replace('https://youtu.be/',"",$str);
-      */
+
+      $form['url'] = str_replace('https://youtu.be/',"",$form['url']);
+        //dd($form['url']);
+
+
       $post->user_id = $request->user()->id;
       $post->fill($form);
       $post->save();
 
-      return redirect('home/top');
+      return redirect('/');
     }
 
     public function index(Request $request)
@@ -42,13 +45,12 @@ class PostController extends Controller
         } else {
             $articles = Post::all()->sortByDesc('updated_at');
         }
-
-      $youtube_ids = Post::all();
-      $youtube_ids = str_replace('https://youtu.be/',"",$youtube_ids);
-
+      
       $data = Post::paginate(5);
 
-      return view('home.top', ['articles'=>$articles, 'cond_title'=>$cond_title, 'youtube_ids'=>$youtube_ids, 'data'=>$data]);
+      //dd($youtube_ids);
+
+      return view('home.top', ['articles'=>$articles, 'cond_title'=>$cond_title, 'data'=>$data]);
     }
 
 
@@ -57,6 +59,6 @@ class PostController extends Controller
 
       $post = Post::find($request->id);
       $post->delete();
-      return redirect('relation/mypage');
+      return redirect('/mypage');
   }
 }

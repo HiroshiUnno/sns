@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/delete.js') }}" defer></script>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -39,7 +40,7 @@
 					　　　　　　　　　　<ul class="dropdown-menu" role="menu">
 						　　　　　　　　　　　　<li><a href="{{ url('/loginForm') }}">ログイン</a></li>
 						　　　　　　　　　　　　<li><a href="{{ url('/registerForm') }}">アカウント作成</a></li>
-						　　　　　　　　　　　　<li><a href="{{ url('/relation/mypage') }}">マイページ</a></li>
+            　　　　　　　　　　　　<li><a href="{{ url('/post/create') }}">新規投稿</a></li>
 				　　　　　　　　　　	</ul>
 				　　　　　　　　　　</li>
 		　　　	　　　　　　　</ul>

@@ -15,4 +15,9 @@ class Post extends Model
       'url' => 'required',
     );
 
+    public function user()
+   {
+       return $this->belongsTo('App\User');
+   }
+
 }

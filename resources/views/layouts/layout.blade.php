@@ -6,14 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- CSRF Token -->
-         {{-- 後の章で説明します --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
         <title>@yield('title')</title>
 
         <!-- Scripts -->
-         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- Fonts -->
@@ -21,15 +18,12 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('css/top.css') }}" rel="stylesheet">
         <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
-            {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -46,7 +40,8 @@
 					　　　　　　　　　　<ul class="dropdown-menu" role="menu">
 						　　　　　　　　　　　　<li><a href="{{ url('/loginForm') }}">ログイン</a></li>
 						　　　　　　　　　　　　<li><a href="{{ url('/registerForm') }}">アカウント作成</a></li>
-						　　　　　　　　　　　　<li><a href="#">マイページ</a></li>
+            　　　　　　　　　　　　<li><a href="{{ url('/post/create') }}">新規投稿</a></li>
+                                <li><a href="{{ url('/mypage') }}">マイページ</a></li>
 				　　　　　　　　　　	</ul>
 				　　　　　　　　　　</li>
 		　　　	　　　　　　　</ul>
