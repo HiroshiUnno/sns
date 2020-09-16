@@ -8,7 +8,10 @@ class Post extends Model
 {
     //
     protected $guarded = array('id');
-
+    protected $dates = [
+      'created_at',
+      'updated_at'
+    ];
     public static $rules = array(
       'title' => 'required',
       'content' => 'required',
@@ -19,5 +22,6 @@ class Post extends Model
    {
        return $this->belongsTo('App\User');
    }
+
 
 }

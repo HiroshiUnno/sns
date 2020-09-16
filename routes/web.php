@@ -37,8 +37,12 @@ Route::post('/post/create', 'PostController@create')->middleware('auth');
 Route::post('/mypage', 'PostController@delete')->middleware('auth');
 
 Route::get('/mypage', 'UserController@add')->middleware('auth');
-Route::get('/mypage', 'UserController@index')->middleware('auth');
-Route::get('/mypage', 'UserController@index')->middleware('auth');
+Route::get('/mypage', 'UserController@show')->middleware('auth');
+Route::get('/users', 'UserController@index')->middleware('auth');
+//Route::post('/friend', 'UserController@follow')->middleware('auth');
+//Route::delete('/friend', 'UserController@unfollow')->middleware('auth');
+Route::post('/users{user}/follow', 'UserController@follow')->middleware('auth')->name('follow');
+Route::delete('/users/{user}/unfollow', 'UserController@unfollow')->middleware('auth')->name('unfollow');
 
-Route::get('/relation/friend', 'RelationController@add')->middleware('auth');
-//Route::get('/relation/friend', 'RelationController@index')->middleware('auth');
+//Route::get('/friend', 'RelationController@add')->middleware('auth');
+//Route::get('/friend', 'RelationController@index')->middleware('auth');

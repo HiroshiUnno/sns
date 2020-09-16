@@ -4,17 +4,19 @@
 
 @section('content')
 <div class="container">
-  <hr color="#c0c0c0">
+   <hr color="#c0c0c0">
     <h1>シェア一覧</h1>
     <p><input type="button" onclick="location.href='{{ url('/post/create') }}'" value="新規投稿"></p>
         <div class="row">
             <div class="articles col-md-8 mx-auto mt-3">
+              <hr color="#c0c0c0">
                 @foreach($posts as $post)
                     <div class="article">
                         <div class="row">
                             <div class="text col-md-6">
                                 <div class="date">
                                     {{-- $post->updated_at->format('Y年m月d日') --}}
+                                    {{ date('Y年m月d日',  strtotime($post->updated_at)) }}
                                 </div>
                                 <div class="title">
                                     {{ Str::limit($post->title, 150) }}

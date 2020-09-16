@@ -13,11 +13,16 @@ class CreateRelationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('relations', function (Blueprint $table) {
+        Schema::create('followers', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('folliwered_id');
+            $table->integer('following_id');
+            $table->integer('followed_id');
             $table->timestamps();
+
+            $table->index('following_id');
+            $table->index('followed_id');
+
+            $table->unique(['following_id', 'followed_id']);
         });
     }
 

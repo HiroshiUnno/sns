@@ -45,3 +45,7 @@ body {
   margin-right: auto;
 }
 
+.rounded-circle {
+  border-radius: 50%;
+}
+

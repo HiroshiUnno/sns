@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Relation;
 use App\Post;
+use App\User;
 use Carbon\Carbon;
 
 class RelationController extends Controller
@@ -14,11 +15,11 @@ class RelationController extends Controller
     {
       return view('relation.friend');
     }
-    /*
-    public function index()
+
+    public function index(Request $request)
     {
 
     }
-    */
+
 
 }
