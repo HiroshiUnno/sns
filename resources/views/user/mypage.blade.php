@@ -4,9 +4,16 @@
 
 @section('content')
 <div class="container">
-   <hr color="#c0c0c0">
-    <h1>シェア一覧</h1>
-    <p><input type="button" onclick="location.href='{{ url('/post/create') }}'" value="新規投稿"></p>
+  <div class="topWrapper">
+      <img src="{{ $user->icon_img }}" class="rounded-circle" width="100" height="100">
+  </div>
+    <div class="btn-square">
+      <p><input type="button" onclick="location.href='{{ url('/post/create') }}'" value="新規投稿"></p>
+      <p><input type="button" onclick="location.href='{{ url('/users/edit') }}'" value="プロフィール編集"></p>
+      <p><input type="button" onclick="location.href='{{ url('/users') }}'" value="ユーザーリスト"></p>
+  </div>
+     <hr color="#c0c0c0">
+      <h1>投稿一覧</h1>
         <div class="row">
             <div class="articles col-md-8 mx-auto mt-3">
               <hr color="#c0c0c0">

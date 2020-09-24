@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Hiroshi',
             'email' => 'id1@test',
             'password' => Hash::make('my_secure_password'),
+            'introduction' => 'Hello1',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
           ],
@@ -25,6 +26,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Ayaka',
             'email' => 'id2@test',
             'password' => Hash::make('my_secure_password'),
+            'introduction' => 'Hello2',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
           ],
@@ -33,6 +35,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Ren',
             'email' => 'id3@test',
             'password' => Hash::make('my_secure_password'),
+            'introduction' => 'Hello3',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
           ],
@@ -41,6 +44,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Rui',
             'email' => 'id4@test',
             'password' => Hash::make('my_secure_password'),
+            'introduction' => 'Hello4',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
           ]

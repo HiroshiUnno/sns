@@ -39,13 +39,14 @@ class PostController extends Controller
     public function index(Request $request)
     {
       $cond_title = $request->cond_title;
+      $articles = User::all();
 
         if ($cond_title != '') {
             $articles = Post::where('title', $cond_title).orderBy('updated_at', 'desc')->get();
         } else {
             $articles = Post::all()->sortByDesc('updated_at');
         }
-      
+
       $data = Post::paginate(5);
 
       //dd($youtube_ids);

@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static $rules = array(
+      'name' => 'required',
+      'introduction' => 'required',
+    );
+
     public function posts()
     {
         return $this->hasMany('App\Post');
@@ -81,7 +86,7 @@ class User extends Authenticatable
     {
 
         return (boolean) $this->followers()->where('following_id', $user_id)->first(['users.id']);
-        
+
     }
 
 }

@@ -12,7 +12,8 @@
                           <img src="{{ $user->icon_img }}" class="rounded-circle" width="50" height="50">
                           <div class="ml-2 d-flex flex-column">
                               <p class="mb-0">{{ $user->name }}</p>
-                              <p class="mb-1">{{ $user->id }}</p>
+                              <p class="mb-1">ID. {{ $user->id }}</p>
+                              <p class="mb-1">{{ $user->introduction }}</p>
                           </div>
                           @if (auth()->user()->isFollowed($user->id))
                               <div class="px-2">
