@@ -42,6 +42,9 @@
               @endforeach
           </div>
       </div>
+      <div class="buttonSet">
+          <a href="{{ url('/mypage') }}" class="btn btn-primary btn-sm">戻る</a>
+      </div>
       <div class="my-4 d-flex justify-content-center">
           {{ $all_users->links() }}
       </div>

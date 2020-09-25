@@ -7,6 +7,9 @@
   <div class="topWrapper">
       <img src="{{ $user->icon_img }}" class="rounded-circle" width="100" height="100">
   </div>
+  <div class="introduction">
+      <p>{{ Str::limit($user->introduction, 200) }}</p>
+  </div>
     <div class="btn-square">
       <p><input type="button" onclick="location.href='{{ url('/post/create') }}'" value="新規投稿"></p>
       <p><input type="button" onclick="location.href='{{ url('/users/edit') }}'" value="プロフィール編集"></p>
