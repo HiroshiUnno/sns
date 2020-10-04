@@ -9,7 +9,7 @@
               @foreach ($all_users as $user)
                   <div class="card">
                       <div class="card-haeder p-3 w-100 d-flex">
-                          <img src="{{ $user->icon_img }}" class="rounded-circle" width="50" height="50">
+                          <img src="/storage/user/{{ $user->icon_img }}" class="rounded-circle" width="50" height="50">
                           <div class="ml-2 d-flex flex-column">
                               <p class="mb-0">{{ $user->name }}</p>
                               <p class="mb-1">ID. {{ $user->id }}</p>
@@ -22,7 +22,7 @@
                           @endif
                           <div class="d-flex justify-content-end flex-grow-1">
                             {{-- dd(auth()->user()->isFollowing($user->id)) --}}
-                              @if (auth()->user()->isFollowed($user->id))
+                              @if (auth()->user()->isFollowing($user->id))
                                   <form action="{{ route('unfollow', ['user' => $user->id]) }}" method="POST">
                                       {{ csrf_field() }}
                                       {{ method_field('DELETE') }}

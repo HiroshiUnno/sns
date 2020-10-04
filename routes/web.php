@@ -40,7 +40,7 @@ Route::get('/mypage', 'UserController@add')->middleware('auth');
 Route::get('/mypage', 'UserController@show')->middleware('auth');
 Route::get('/users', 'UserController@index')->middleware('auth');
 
-Route::post('/users{user}/follow', 'UserController@follow')->middleware('auth')->name('follow');
+Route::post('/users/{user}/follow', 'UserController@follow')->middleware('auth')->name('follow');
 Route::delete('/users/{user}/unfollow', 'UserController@unfollow')->middleware('auth')->name('unfollow');
 
 Route::get('/users/edit', 'ProfileController@add')->middleware('auth');

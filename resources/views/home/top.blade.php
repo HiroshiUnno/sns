@@ -15,7 +15,7 @@
                                     {{ $article->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="thumbnail">
-                                    <img src="{{ $article->icon_img }}" class="rounded-circle" width="50" height="50">
+                                    {{-- <img src="/storage/user/{{ $article->icon_img }}" class="rounded-circle" width="30" height="30"> --}}
                                 </div>
                                 <div class="name">
                                     ＠{{ Str::limit($article->user_id, 150) }}

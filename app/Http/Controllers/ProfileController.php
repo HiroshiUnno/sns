@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 use Carbon\Carbon;
 
 class ProfileController extends Controller
@@ -15,7 +17,7 @@ class ProfileController extends Controller
       return view('profile.edit');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
       //$profile = User::find($request->all());
       $user_id = Auth::id();
@@ -32,10 +34,10 @@ class ProfileController extends Controller
       //$profile_form = $request->all();
 
       $uploadfile = $request->file('icon_img');
-
+      //dd($uploadfile);
           if(!empty($uploadfile)){
             $thumbnailname = $request->file('icon_img')->hashName();
-            $request->file('icon_img')->storeAs('public/', $thumbnailname);
+            $request->file('icon_img')->storeAs('public/user', $thumbnailname);
             $param = [
                       'name' => $request->name,
                       'introduction' => $request->introduction,
