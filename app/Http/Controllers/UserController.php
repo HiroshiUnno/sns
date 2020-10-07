@@ -20,10 +20,9 @@ class UserController extends Controller
 
     public function show()
     {
-      //$user = Auth::user()->all();
       $user_id = Auth::id();
       $user = DB::table('users')->where('id', $user_id)->first();
-      //dd($user_id);
+      //dd($user);
       $posts = DB::table('posts')->where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
 
 

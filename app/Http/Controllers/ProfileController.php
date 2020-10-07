@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use Carbon\Carbon;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -31,8 +31,10 @@ class ProfileController extends Controller
     {
       $this->validate($request, User::$rules);
       $profile = User::find($request->id);
-      //$profile_form = $request->all();
+      $profile_form = $request->all();
 
+      //$profile_form = $request->all();
+      /*
       $uploadfile = $request->file('icon_img');
       //dd($uploadfile);
           if(!empty($uploadfile)){
@@ -49,6 +51,29 @@ class ProfileController extends Controller
                          'introduction' => $request->introduction,
                         ];
           }
+        */
+        $uploadfile = $request->file('icon_img');
+        //dd($uploadfile);
+            if(!empty($uploadfile)){
+              //$thumbnailname = $request->file('icon_img')->hashName();
+              $path = Storage::disk('s3')->putFile('/', $uploadfile, 'public');
+              $profile_form['icon_img'] = Storage::disk('s3')->url($path);
+              //dd($profile_form);
+              //$profile->icon_img = $path;
+              //$profile->fill($profile_form)->save();
+              //dd($profile);
+              $param = [
+                        'name' => $request->name,
+                        'introduction' => $request->introduction,
+                        'icon_img' => $profile_form['icon_img'],
+                       ];
+            } else {
+                 $param = [
+                           'name' => $request->name,
+                           'introduction' => $request->introduction,
+                          ];
+            }
+
         User::where('id', $request->user_id)->update($param);
         return redirect('/users/edit')->with('success', '保存しました。');
     }

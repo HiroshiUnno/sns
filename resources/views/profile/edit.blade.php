@@ -10,7 +10,8 @@
 
       <div class="topWrapper">
         @if(!empty($profile->icon_img))
-          <img src="/storage/user/{{ $profile->icon_img }}" class="editThumbnail">
+          {{-- <img src="/storage/user/{{ $profile->icon_img }}" class="editThumbnail"> --}}
+               <img src="{{ $profile->icon_img }}" class="editThumbnail">
         @else
           画像なし
         @endif
