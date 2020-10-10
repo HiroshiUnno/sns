@@ -37,7 +37,7 @@ class PostController extends Controller
 
       return redirect('/');
     }
-　　 //投稿一覧の取得
+    //投稿一覧の取得
     public function index(Request $request)
     {
       $cond_title = $request->cond_title;
@@ -53,15 +53,15 @@ class PostController extends Controller
 
       //dd($youtube_ids);
 
-      return view('home.top', ['articles'=>$articles, 'cond_title'=>$cond_title, 'data'=>$data]);
+      return view('home.top', ['articles'=>$articles, 'cond_title'=>$cond_title]);
     }
 
-　　 //投稿の削除
+    //投稿の削除
     public function delete(Request $request)
-  {
+    {
 
       $post = Post::find($request->id);
       $post->delete();
       return redirect('/mypage');
-  }
+    }
 }
