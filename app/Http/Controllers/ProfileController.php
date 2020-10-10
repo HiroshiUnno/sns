@@ -16,52 +16,29 @@ class ProfileController extends Controller
     {
       return view('profile.edit');
     }
-
+    //ユーザーの取得
     public function edit(Request $request)
     {
-      //$profile = User::find($request->all());
+
       $user_id = Auth::id();
       $profile = DB::table('users')->where('id', $user_id)->first();
       //dd($profile);
       return view('profile.edit', ['profile' => $profile]);
 
     }
-
+　　 //プロフィール編集処理
     public function update(Request $request)
     {
       $this->validate($request, User::$rules);
       $profile = User::find($request->id);
       $profile_form = $request->all();
 
-      //$profile_form = $request->all();
-      /*
-      $uploadfile = $request->file('icon_img');
-      //dd($uploadfile);
-          if(!empty($uploadfile)){
-            $thumbnailname = $request->file('icon_img')->hashName();
-            $request->file('icon_img')->storeAs('public/user', $thumbnailname);
-            $param = [
-                      'name' => $request->name,
-                      'introduction' => $request->introduction,
-                      'icon_img' => $thumbnailname,
-                     ];
-          } else {
-               $param = [
-                         'name' => $request->name,
-                         'introduction' => $request->introduction,
-                        ];
-          }
-        */
         $uploadfile = $request->file('icon_img');
         //dd($uploadfile);
             if(!empty($uploadfile)){
-              //$thumbnailname = $request->file('icon_img')->hashName();
               $path = Storage::disk('s3')->putFile('/', $uploadfile, 'public');
               $profile_form['icon_img'] = Storage::disk('s3')->url($path);
-              //dd($profile_form);
-              //$profile->icon_img = $path;
-              //$profile->fill($profile_form)->save();
-              //dd($profile);
+
               $param = [
                         'name' => $request->name,
                         'introduction' => $request->introduction,

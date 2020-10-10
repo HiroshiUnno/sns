@@ -25,34 +25,32 @@
                <div class="error">{{ $errors->first('user_id') }}</div>
              @endif
 
-                 <div class="labelTitle">アカウント名</div>
+                <div class="labelTitle">アカウント名</div>
 
                   <div>
                     <input type="text" class="userForm" name="name" placeholder="User" value="{{ $profile->name }}">
-                      @if($errors->has('name'))
-                        <div class="error">{{ $errors->first('name') }}</div>
-                      @endif
+                    @if($errors->has('name'))
+                      <div class="error">{{ $errors->first('name') }}</div>
+                    @endif
+                　</div>
+
+                <div class="labelTitle">自己紹介</div>
+                  <div>
+                    <input type="text" class="userForm" name="introduction" placeholder="User" value="{{ $profile->introduction }}">
+                    @if($errors->has('name'))
+                      <div class="error">{{ $errors->first('introduction') }}</div>
+                    @endif
                   </div>
 
-                    <div class="labelTitle">自己紹介</div>
+                <div class="labelTitle">サムネイル</div>
+                  <div>
+                    <input type="file" name="icon_img">
+                  </div>
 
-                      <div>
-                        <input type="text" class="userForm" name="introduction" placeholder="User" value="{{ $profile->introduction }}">
-                        @if($errors->has('name'))
-                          <div class="error">{{ $errors->first('introduction') }}</div>
-                        @endif
-                      </div>
-
-                        <div class="labelTitle">サムネイル</div>
-
-                          <div>
-                            <input type="file" name="icon_img">
-                          </div>
-
-                            <div class="buttonSet">
-                              <input type="submit" name="send" value="ユーザー変更" class="btn btn-primary btn-sm btn-done">
-                                <a href="{{ url('/mypage') }}" class="btn btn-primary btn-sm">戻る</a>
-                            </div>
+                <div class="buttonSet">
+                    <input type="submit" name="send" value="ユーザー変更" class="btn btn-primary btn-sm btn-done">
+                      <a href="{{ url('/mypage') }}" class="btn btn-primary btn-sm">戻る</a>
+                    </div>
         </form>
 </div>
 @endsection

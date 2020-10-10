@@ -5,7 +5,6 @@
 @section('content')
 <div class="container">
   <div class="topWrapper">
-      {{-- <img src="/storage/user/{{ $user->icon_img }}" class="rounded-circle" width="100" height="100"> --}}
            <img src="{{ $user->icon_img }}" class="rounded-circle" width="100" height="100">
   </div>
   <div class="introduction">

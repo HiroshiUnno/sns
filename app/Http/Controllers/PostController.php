@@ -17,7 +17,7 @@ class PostController extends Controller
     {
       return view('post.create');
     }
-
+    //投稿処理
     public function create(Request $request)
     {
       $this -> validate($request, Post::$rules);
@@ -37,7 +37,7 @@ class PostController extends Controller
 
       return redirect('/');
     }
-
+　　 //投稿一覧の取得
     public function index(Request $request)
     {
       $cond_title = $request->cond_title;
@@ -56,7 +56,7 @@ class PostController extends Controller
       return view('home.top', ['articles'=>$articles, 'cond_title'=>$cond_title, 'data'=>$data]);
     }
 
-
+　　 //投稿の削除
     public function delete(Request $request)
   {
 
