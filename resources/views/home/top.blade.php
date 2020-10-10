@@ -4,7 +4,21 @@
 
 @section('content')
 <div class="container">
-  <hr color="#c0c0c0">
+    <hr color="#c0c0c0">
+          <div class="col-md-8">
+              <form action="{{ action('PostController@index') }}" method="get">
+                  <div class="form-group row">
+                      <label class="col-md-2">タイトル</label>
+                      <div class="col-md-8">
+                          <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                      </div>
+                      <div class="col-md-2">
+                          {{ csrf_field() }}
+                          <input type="submit" class="btn btn-primary" value="検索">
+                      </div>
+                  </div>
+              </form>
+          </div>
         <div class="row">
             <div class="articles col-md-8 mx-auto mt-3">
                 @foreach($articles as $article)
