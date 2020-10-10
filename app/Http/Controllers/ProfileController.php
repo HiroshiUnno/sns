@@ -26,7 +26,7 @@ class ProfileController extends Controller
       return view('profile.edit', ['profile' => $profile]);
 
     }
-　　 //プロフィール編集処理
+    //プロフィール編集処理
     public function update(Request $request)
     {
       $this->validate($request, User::$rules);
