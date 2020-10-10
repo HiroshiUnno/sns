@@ -49,7 +49,7 @@ class PostController extends Controller
             $articles = Post::all()->sortByDesc('updated_at');
         }
 
-      $data = Post::paginate(5);
+      $articles = Post::paginate(5);
 
       //dd($youtube_ids);
 

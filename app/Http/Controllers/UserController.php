@@ -17,7 +17,7 @@ class UserController extends Controller
     {
       return view('user.mypage');
     }
-　　 //ユーザー取得
+    //ユーザー取得
     public function show()
     {
       $user_id = Auth::id();
@@ -30,14 +30,14 @@ class UserController extends Controller
     return view('user.mypage', ['user'=>$user, 'user_id'=>$user_id, 'posts'=>$posts]);
 
     }
-　　 //他ユーザーの取得
+    //他のユーザーを取得
     public function index(User $user)
     {
       $all_users = $user->getAllUsers(auth()->user()->id);
 
         return view('relation.users', ['all_users'  => $all_users]);
     }
-　　 //フォローする
+    //フォローする
     public function follow(User $user)
     {
       //dd($user->id);
@@ -50,13 +50,11 @@ class UserController extends Controller
         return back();
       }
     }
-　　 //フォローを外す
+    //フォローを外す
     public function unfollow(User $user)
     {
-
       Auth::user()->unfollow($user->id);
 
         return back();
-
     }
 }

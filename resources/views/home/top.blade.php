@@ -34,7 +34,7 @@
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
-                {{ $data->links() }}
+                {{ $articles->links() }}
             </div>
         </div>
   <hr color="#c0c0c0">
