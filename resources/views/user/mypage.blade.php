@@ -5,7 +5,11 @@
 @section('content')
 <div class="container">
   <div class="topWrapper">
-           <img src="{{ $user->icon_img }}" class="rounded-circle" width="100" height="100">
+        @if(!empty($user->icon_img))
+            <img src="{{ $user->icon_img }}" class="rounded-circle" width="100" height="100">
+        @else
+            画像なし   {{-- <img src="{{ $url }}"> --}}
+        @endif
   </div>
   <div class="introduction">
       <p>{{ Str::limit($user->introduction, 150) }}</p>

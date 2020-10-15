@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Storage;
 
 class UserController extends Controller
 {
@@ -20,6 +21,9 @@ class UserController extends Controller
     //ユーザー取得
     public function show()
     {
+      //noimage取得
+      $url = Storage::disk('s3')->url("shareyoutube/noimage.png");
+
       $user_id = Auth::id();
       $user = DB::table('users')->where('id', $user_id)->first();
       //dd($user);
@@ -27,7 +31,7 @@ class UserController extends Controller
 
       //dd($posts);
 
-    return view('user.mypage', ['user'=>$user, 'user_id'=>$user_id, 'posts'=>$posts]);
+    return view('user.mypage', ['user'=>$user, 'user_id'=>$user_id, 'posts'=>$posts, 'url'=>$url]);
 
     }
     //他のユーザーを取得

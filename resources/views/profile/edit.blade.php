@@ -13,7 +13,7 @@
           {{-- <img src="/storage/user/{{ $profile->icon_img }}" class="editThumbnail"> --}}
                <img src="{{ $profile->icon_img }}" class="editThumbnail">
         @else
-          画像なし
+            画像なし   {{-- <img src="{{ $url }}"> --}}
         @endif
       </div>
 

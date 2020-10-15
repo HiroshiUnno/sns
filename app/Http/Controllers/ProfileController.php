@@ -19,11 +19,12 @@ class ProfileController extends Controller
     //ユーザーの取得
     public function edit(Request $request)
     {
-
+      $url = Storage::disk('s3')->url("shareyoutube/noimage.png");
+      //dd($url);
       $user_id = Auth::id();
       $profile = DB::table('users')->where('id', $user_id)->first();
       //dd($profile);
-      return view('profile.edit', ['profile' => $profile]);
+      return view('profile.edit', ['profile' => $profile, 'url'=>$url]);
 
     }
     //プロフィール編集処理
