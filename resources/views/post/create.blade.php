@@ -9,7 +9,7 @@
                 <h2><新規投稿></h2>
                 <form action="{{ action('PostController@create') }}" method="post" enctype="multipart/form-data">
 
-                  @if (count($errors) > 0)
+                    @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
                                 <li>{{ $e }}</li>
