@@ -48,7 +48,11 @@
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
+<<<<<<< HEAD
                 {{-- $articles->links() --}}
+=======
+                {{ $articles->links() }}
+>>>>>>> origin/master
             </div>
         </div>
   <hr color="#c0c0c0">
