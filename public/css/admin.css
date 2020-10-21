@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #c0c0c0;
+  color: #000;
+}
+
+.navbar-laravel {
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  color: #000 !important;
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.table-dark {
+  color: #fff;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #000;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.login-header {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-body {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu {
+  margin-right: auto;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.topWrapper {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.editThumbnail {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.buttonSet {
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+
+.labelTitle {
+  color: #006DD9;
+  margin: 20px 0 5px 0;
+}
+
+input[class=userForm] {
+  width: 100%;
+  padding: 5px 0 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  transition: 1s;
+}
+
+input[class=userForm]:focus {
+  background: #87ceeb;
+}
+
+.btn-done {
+  background: #dc143c;
+  border: 1px solid #dc143c;
+}
+
+.btn-done:hover {
+  background: #cc1237;
+  border: 1px solid #cc1237;
+}
+
+.error {
+  font-size: 15px;
+  font-weight: 100;
+  color: #cc1237;
+}
+
+div p {
+  display: inline-block;
+}
+
