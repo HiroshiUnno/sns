@@ -49,11 +49,7 @@ class PostController extends Controller
             $articles = Post::all()->sortByDesc('updated_at');
         }
 
-<<<<<<< HEAD
       //$articles = Post::paginate(5);
-=======
-      $articles = Post::paginate(5);
->>>>>>> origin/master
 
       //dd($youtube_ids);
 
