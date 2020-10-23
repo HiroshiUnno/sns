@@ -42,7 +42,7 @@ class PostController extends Controller
     {
       $cond_title = $request->cond_title;
       $articles = User::all();
-
+      //dd($articles);
         if ($cond_title != '') {
             $articles = Post::where('title', $cond_title)->orderBy('updated_at', 'desc')->get();
         } else {
